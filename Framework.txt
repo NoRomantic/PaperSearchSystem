@@ -1,0 +1,7 @@
+web: a input text area, to receive the name of journal
+         a button, get response1 from website1 once pushed. response1 is accepted by website2 and return the final results.
+
+back: request the url web
+	save json result from website1
+	pass result to website2
+	save and print final json result
