@@ -30,7 +30,8 @@ def get_journal_info(journal_name):
         dict2 = r2.json()
         return dict2
     else:
-        raise Exception('查找结果为空')
+        # create a list to save all the unsearched journals.
+        pass
 
 
 def upload(request):
@@ -50,14 +51,26 @@ def upload(request):
             # Remove blank rows
             exist_papers = [x for x in all_papers if (x[0] != '' and x[1] != '')]
             exist_papers_infos = [x[0: 2] for x in exist_papers]
-            # Get JCR,top,impact factor
+            # Get fenqu,top,impact factor
             journal_names = [x[1].replace('&', 'and') for x in exist_papers_infos]
-            dict_record = []
+            # paper_info_saved saves all infos of paper required
+            dict_record, paper_info_saved = [], []
             for journal in journal_names:
                 dict_record.append(get_journal_info(journal))
+            for i in range(len(dict_record)):
+                dict_tmp = dict()
+                dict_tmp['paper_name'] = exist_papers_infos[i][0]
+                dict_tmp['journal_name'] = exist_papers_infos[i][1]
+                dict_tmp['fenqu'] = dict_record[i]['JCR'][0]['Section']
+                dict_tmp['top'] = dict_record[i]['ZKY'][0]['Top']
+                dict_tmp['if_avg'] = dict_record[i]['Indicator']['IFavg']
+                paper_info_saved.append(dict_tmp)
 
-            # Get citation frequence. (ESI index is still not available, default value is '否')
+            # Get citation frequence, ESI
+            # 确保期刊名没有特殊字符
             paper_names = [x[0] for x in exist_papers_infos]
 
-        return render(request, 'search.html', {'state': dict_record})
+            # Create a form to show all the infos which have already been searched, also the papers not searched.
+
+        return render(request, 'search.html', {'state': paper_info_saved})
 
