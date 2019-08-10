@@ -1,9 +1,9 @@
 {% block content %}
 
-<h2>论文结果查询</h2>
+<h2 align="center">论文结果查询</h2>
 <br>
 <div class="page-container">
-    <form method="POST" action="{% url '论文查询页面' %}" align="center" enctype="multipart/form-data">
+    <form method="POST" action="{% url '上传表格页面' %}" align="center" enctype="multipart/form-data">
         {% csrf_token %}
         导入Excel表格：
         <input type="file" name="表格">

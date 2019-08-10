@@ -18,5 +18,5 @@ from django.urls import path
 from process_form import views
 
 urlpatterns = [
-    path('search/', views.upload, name='论文查询页面'),
+    path('search/', views.upload, name='上传表格页面'),
 ]
