@@ -1,1 +1,3 @@
-{{ state }}
+{% for paper in papers.all %}
+    {{ paper.papername }}
+{% end for %}

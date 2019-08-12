@@ -1,8 +1,8 @@
 import xlrd
-import time
 from django.shortcuts import render
 from functions.count_score import *
 from functions.paper_search import *
+from .models import *
 
 
 def home(request):
@@ -37,60 +37,64 @@ def upload(request):
             exist_papers = [x for x in all_papers if (x[0] != '' and x[1] != '')]
             exist_papers_infos = [x[0: 2] for x in exist_papers]
 
-            list_record = list()
-            unsearched_list = list()  # To contain papers that have not been searched
             for info in exist_papers_infos:
-                dict_record = dict()
                 pa_name = info[0].rstrip('\r\n')
                 jn_name = info[1].replace('&', 'and')
 
                 pa_info = get_paper_info(pa_name)
                 jn_info = get_journal_info(jn_name)
-                if jn_info is None:
-                    unsearched_list.append({'paper_name': pa_name, 'journal_name': jn_name})
-                # time.sleep(3)
+                if jn_info is None:  # Unsearched
+                    unsearched_paper = UnsearchedPapers()
+                    unsearched_paper.papername = pa_name
+                    unsearched_paper.journal = jn_name
+                    unsearched_paper.save()
                 else:
-                    dict_record['paper_name'] = pa_name
-                    dict_record['journal_name'] = jn_name
-                    dict_record['fenqu'] = jn_info['ZKY'][0]['Section']
-                    dict_record['top'] = jn_info['ZKY'][0]['Top']
-                    dict_record['if_avg'] = jn_info['Indicator']['IFavg']
-                    dict_record['cites'] = int(pa_info)
-                    dict_record['esi'] = False  # Default false
-                    list_record.append(dict_record)
-            ''' Paper Search Finished '''
+                    paper_info = PaperInfo()
+                    paper_info.papername = pa_name
+                    paper_info.journal = jn_name
+                    paper_info.fenqu = jn_info['ZKY'][0]['Section']
+                    paper_info.top = jn_info['ZKY'][0]['Top']
+                    paper_info.impactfactor = jn_info['Indicator']['IFavg']
+                    paper_info.cites = int(pa_info)
+                    paper_info.esi = False  # Default false
+                    paper_info.save()
 
-            # Count comprehensive indicators(suppose all paper infos have been filled)
-            com_ind = assess_score(list_record, patents)
-            sum_esi, sum_jcr12, sum_cites = 0, 0, 0
-            for record in list_record:
-                if record['esi']:
-                    sum_esi += 1
-                if record['fenqu'] <= 2:
-                    sum_jcr12 += 1
-                sum_cites += record['cites']
-            nsfc_funding_name = nsfc_funding_name.split('/')
-            nsfc_key, nsfc_face, nsfc_youth = False, False, False
-            for nsfc in nsfc_funding_name:
-                if nsfc == 'NSFC青年基金':
-                    nsfc_youth = True
-                if nsfc == 'NSFC面上基金':
-                    nsfc_face = True
-                if nsfc == 'NSFC重点基金':
-                    nsfc_key = True
-            title_name = title_name.split('/')
-            four_youth_title = False
-            for title in title_name:
-                if title in ['院士', '千人', '杰青', '优青']:
-                    four_youth_title = True
-            projects_fund = sum([str(x) for x in projects_fund if x != ''])
+            paper_infos = PaperInfo.objects
 
-            recommonded_title = title_recommend(four_youth_title, sum_esi, projects_fund, sum_jcr12,
-                                                com_ind, sum_cites, nsfc_key, nsfc_face, nsfc_youth)
+            return render(request, 'search.html', {'papers': paper_infos})
 
-            return render(request, 'search.html', {'state': recommonded_title})
-
-            # Create a form to show all the infos which have already been searched, also the papers not searched.
         else:
             # raise Exception('导入文件不是xlsx文件，请重新导入正确文件！')
             return render(request, 'filefail.html')
+
+
+def aaa(request):
+    # Count comprehensive indicators(suppose all paper infos have been filled)
+    com_ind = assess_score(list_record, patents)
+    sum_esi, sum_jcr12, sum_cites = 0, 0, 0
+    for record in list_record:
+        if record['esi']:
+            sum_esi += 1
+        if record['fenqu'] <= 2:
+            sum_jcr12 += 1
+        sum_cites += record['cites']
+    nsfc_funding_name = nsfc_funding_name.split('/')
+    nsfc_key, nsfc_face, nsfc_youth = False, False, False
+    for nsfc in nsfc_funding_name:
+        if nsfc == 'NSFC青年基金':
+            nsfc_youth = True
+        if nsfc == 'NSFC面上基金':
+            nsfc_face = True
+        if nsfc == 'NSFC重点基金':
+            nsfc_key = True
+    title_name = title_name.split('/')
+    four_youth_title = False
+    for title in title_name:
+        if title in ['院士', '千人', '杰青', '优青']:
+            four_youth_title = True
+    projects_fund = sum([str(x) for x in projects_fund if x != ''])
+
+    recommonded_title = title_recommend(four_youth_title, sum_esi, projects_fund, sum_jcr12,
+                                        com_ind, sum_cites, nsfc_key, nsfc_face, nsfc_youth)
+
+    return render(request, 'result.html', {'state': recommonded_title})

@@ -40,11 +40,14 @@ def get_paper_info(paper_name):
         'Accept-Language': 'en-US,en;q=0.9,zh;q=0.8,zh-TW;q=0.7,zh-CN;q=0.6',
         'Cache-Control': 'max-age=0',
         'Connection': 'keep-alive',
-        'Cookie': 'UM_distinctid=16bdbd547349c-0f56d61f2860fa-e343166-13c680-16bdbd547359b7; NID=188=SCq9JGQVG3wiRlc_kKrORp09p8rIS9JycX2tHbyUvjSUXG6pU-wYKtr-BYiNoOXEKue1XHzMwniDXUEaoJ8B_kmtjc4gWoavKjufmCgl-vvWl_LFH9LzXQ1EtTN8DKPcP4JLmVqCD_Env4O_i6zyICbJ0QBBV0IbYNBdDC6Q2No; GSP=NW=1:LM=1564621868:S=dTZn-sXwLNdzuMde; security_session_verify=375c21979d5b7c2428e461b60a15f372; security_session_mid_verify=f04941b46cc3acf718c79b25319a3385; CNZZDATA1273252441=695695754-1564578705-https%253A%252F%252Fgfsoso.99lb.net%252F%7C1565135493',
+        'Cookie': 'UM_distinctid=16bdbd547349c-0f56d61f2860fa-e343166-13c680-16bdbd547359b7; NID=188=SCq9JGQVG3wiRlc_kKrORp09p8rIS9JycX2tHbyUvjSUXG6pU-wYKtr-BYiNoOXEKue1XHzMwniDXUEaoJ8B_kmtjc4gWoavKjufmCgl-vvWl_LFH9LzXQ1EtTN8DKPcP4JLmVqCD_Env4O_i6zyICbJ0QBBV0IbYNBdDC6Q2No; GSP=NW=1:LM=1564621868:S=dTZn-sXwLNdzuMde; security_session_verify=071393578bf119b826923c1a79a400cc; security_session_mid_verify=ce2f736d2e02c86676572a8529994400; CNZZDATA1273252441=695695754-1564578705-https%253A%252F%252Fgfsoso.99lb.net%252F%7C1565481403',
         'Host': 'c.glgoo.top',
         'Referer': 'https://c.glgoo.top/',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'none',
+        'Sec-Fetch-User': '?1',
         'Upgrade-Insecure-Requests': '1',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
     }
 
     parameters = {
