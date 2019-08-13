@@ -38,8 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Later added
-    'werkzeug_debugger_runserver',
-    'django_extensions',
     'process_form',
 ]
 

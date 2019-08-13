@@ -15,11 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from process_form import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='管理员页面'),
-    path('', views.home, name='主页面'),
-    path('process/', include('process_form.urls')),
+    path('processform/', include('process_form.urls')),
 ]

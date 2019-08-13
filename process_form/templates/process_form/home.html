@@ -1,0 +1,27 @@
+{% extends 'process_form/base.html' %}
+{% load static %}
+{% block css %}{% static 'todolist/css/home.css' %}{% endblock css %}
+{% block 标题 %}上传表格{% endblock 标题 %}
+{% block 上传表格高亮 %}active{% endblock 上传表格高亮 %}
+{% block 主体 %}
+
+<h2 class="font-weight-bold" align="center">论文结果查询</h2>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="page-container">
+    <form method="POST" action="{% url 'processform:search_html' %}" align="center" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p class="font-weight-bold">导入Excel表格：</p>
+        <input type="file" name="表格">
+        <br>
+        <br>
+        <button class="btn btn-primary" type="submit">上传文件</button>
+    </form>
+</div>
+
+{% endblock 主体 %}
+

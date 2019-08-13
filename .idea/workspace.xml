@@ -10,20 +10,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/process_form/views.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1036">
-              <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+            <state relative-caret-position="378">
+              <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#3121#3128#1" expanded="true" />
+                <element signature="e#6980#6987#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_form/templates/filefail.html">
+        <entry file="file://$PROJECT_DIR$/process_form/static/process_form/css/home.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/filefail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
@@ -32,60 +47,30 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/paper_search.py">
+        <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="379">
+              <caret line="24" column="68" lean-forward="true" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/系统剩余框架.txt">
+        <entry file="file://$PROJECT_DIR$/process_form/static/process_form/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="17" />
+            <state relative-caret-position="270">
+              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/count_score.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="151" selection-start-line="151" selection-end-line="151" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_form/templates/search.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8" selection-start-column="8" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/process_form/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SearchSystem/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <caret line="72" column="21" lean-forward="true" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
               <folding>
-                <element signature="e#636#668#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,10 +79,51 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_form/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+            <state relative-caret-position="162">
+              <caret line="9" column="54" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
               <folding>
-                <element signature="e#636#668#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/系统剩余框架.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/result.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="39" column="123" selection-start-line="39" selection-start-column="123" selection-end-line="39" selection-end-column="123" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#5;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#7;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#8;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#9;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#10;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#11;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#12;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#13;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#14;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#15;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#16;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#17;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#18;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#19;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,9 +145,27 @@
       <find>theme.html</find>
       <find>tmp</find>
       <find>upload</find>
+      <find>static</find>
+      <find>主页高亮</find>
+      <find>png</find>
+      <find>待办清单</find>
+      <find>todolist</find>
+      <find>center</find>
+      <find>btn btn-primary</find>
+      <find>href=&quot;h</find>
+      <find>h2</find>
+      <find>h-100 d-inline-block</find>
+      <find>mx-auto h-25 d-inline-block text-center</find>
+      <find>mx-auto h-auto w-50 d-inline-block text-center</find>
+      <find>mx-auto h-auto w-200px d-inline-block text-center</find>
     </findStrings>
     <replaceStrings>
       <replace>record</replace>
+      <replace>btn btn-primary btn-lg btn-block</replace>
+      <replace>h4</replace>
+      <replace>mx-auto h-25 d-inline-block text-center</replace>
+      <replace>mx-auto h-25 w-auto d-inline-block text-center</replace>
+      <replace>mx-auto h-auto w-50 d-inline-block text-center</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -133,29 +177,35 @@
         <option value="$PROJECT_DIR$/../test.py" />
         <option value="$PROJECT_DIR$/templates/search_paper.html" />
         <option value="$PROJECT_DIR$/SearchSystem/views.py" />
-        <option value="$PROJECT_DIR$/SearchSystem/settings.py" />
         <option value="$PROJECT_DIR$/process_form/models.py" />
-        <option value="$PROJECT_DIR$/SearchSystem/urls.py" />
         <option value="$PROJECT_DIR$/templates/search.html" />
         <option value="$PROJECT_DIR$/count_score/main.py" />
         <option value="$PROJECT_DIR$/functions/mytest.py" />
-        <option value="$PROJECT_DIR$/process_form/urls.py" />
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/functions/main.py" />
         <option value="$PROJECT_DIR$/process_form/templates/search.html" />
         <option value="$PROJECT_DIR$/functions/count_score.py" />
         <option value="$PROJECT_DIR$/functions/paper_search.py" />
         <option value="$PROJECT_DIR$/系统剩余框架.txt" />
-        <option value="$PROJECT_DIR$/process_form/views.py" />
         <option value="$PROJECT_DIR$/process_form/templates/filefail.html" />
+        <option value="$PROJECT_DIR$/SearchSystem/settings.py" />
+        <option value="$PROJECT_DIR$/SearchSystem/urls.py" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/about.html" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/home.html" />
+        <option value="$PROJECT_DIR$/process_form/static/process_form/css/base.css" />
+        <option value="$PROJECT_DIR$/process_form/urls.py" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/base.html" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/result.html" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/search.html" />
+        <option value="$PROJECT_DIR$/process_form/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="180" />
-    <option name="y" value="-20" />
-    <option name="width" value="1270" />
-    <option name="height" value="615" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="746" />
+    <option name="y" value="188" />
+    <option name="width" value="1070" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -172,28 +222,46 @@
             <path>
               <item name="PaperSearchSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="PaperSearchSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
+              <item name="process_form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PaperSearchSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="PaperSearchSystem" type="462c0819:PsiDirectoryNode" />
               <item name="process_form" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PaperSearchSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PaperSearchSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="process_form" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="process_form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PaperSearchSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PaperSearchSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="process_form" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="process_form" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PaperSearchSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="PaperSearchSystem" type="462c0819:PsiDirectoryNode" />
               <item name="process_form" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PaperSearchSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PaperSearchSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="process_form" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="process_form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PaperSearchSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="PaperSearchSystem" type="462c0819:PsiDirectoryNode" />
               <item name="SearchSystem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PaperSearchSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PaperSearchSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -205,14 +273,19 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PythonCrawler" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/process_form/templates/process_form" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\WuQinzhu\Desktop\Git_Repos\PaperSearchSystem\process_form\templates\process_form" />
       <recent name="C:\Users\WuQinzhu\Desktop\Git_Repos\PaperSearchSystem\process_form\templates" />
       <recent name="C:\Users\WuQinzhu\Desktop\Git_Repos\PaperSearchSystem\process_form" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\WuQinzhu\Desktop\Git_Repos\PaperSearchSystem\process_form\templates\process_form" />
+      <recent name="C:\Users\WuQinzhu\Desktop\Git_Repos\PaperSearchSystem\process_form\static\process_form\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -328,7 +401,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12681638" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14266843" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -346,6 +419,9 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -385,13 +461,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/process_form/admin.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_form/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/process_form/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -436,13 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SearchSystem/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/assess_score.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -460,13 +522,17 @@
     <entry file="file://$PROJECT_DIR$/functions/paper_search.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
-          <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebOfScience/WebOfScience/middlewares.py" />
+    <entry file="file://$PROJECT_DIR$/WebOfScience/WebOfScience/items.py" />
+    <entry file="file://$PROJECT_DIR$/WebOfScience/WebOfScience/pipelines.py" />
+    <entry file="file://$PROJECT_DIR$/WebOfScience/WebOfScience/settings.py" />
     <entry file="file://$PROJECT_DIR$/functions/count_score.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
@@ -474,58 +540,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_form/templates/search.html">
+    <entry file="file://$PROJECT_DIR$/process_form/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_form/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        <state relative-caret-position="36">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/系统剩余框架.txt">
+    <entry file="file://$PROJECT_DIR$/SearchSystem/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_form/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-          <folding>
-            <element signature="e#636#668#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="536">
+          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SearchSystem/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="378">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
           <folding>
             <element signature="e#636#668#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        <state relative-caret-position="54">
+          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_form/templates/filefail.html">
+    <entry file="file://$PROJECT_DIR$/process_form/static/process_form/css/home.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/filefail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/系统剩余框架.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_form/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="54" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_form/static/process_form/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="24" column="68" lean-forward="true" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="39" column="123" selection-start-line="39" selection-start-column="123" selection-end-line="39" selection-end-column="123" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#8;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#9;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#10;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#11;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#12;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#13;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#14;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#15;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#16;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#17;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#18;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#19;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <folding>
+            <element signature="e#3121#3128#1" expanded="true" />
+            <element signature="e#6980#6987#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/process_form/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1036">
-          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        <state relative-caret-position="90">
+          <caret line="72" column="21" lean-forward="true" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

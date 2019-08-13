@@ -1,0 +1,204 @@
+{% extends 'process_form/base.html' %}
+{% load static %}
+{% block css %}{% static 'todolist/css/home.css' %}{% endblock css %}
+{% block 标题 %}上传表格{% endblock 标题 %}
+{% block 上传表格高亮 %}active{% endblock 上传表格高亮 %}
+{% block 主体 %}
+
+<h2 class="font-weight-bold" align="center">论文查询界面</h2>
+<br>
+<br>
+<br>
+<h4 class="font-weight-bold" align="center">已查到的论文</h4>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead class="thead-light">
+        <tr>
+            <th>序号</th>
+            <th>论文名</th>
+            <th>期刊名</th>
+            <th>分区</th>
+            <th>是否TOP</th>
+            <th>影响因子</th>
+            <th>他引次数</th>
+            <th>是否ESI高被引</th>
+            <th>编辑</th>
+            <th>删除</th>
+        </tr>
+        </thead>
+        <tbody class="no-underline">
+        {% for 每一件事 in 清单 %}
+        {% if 每一件事.已完成 %}
+        <tr>
+            <th class="text-dark" scope="row">{{ forloop.counter }}</th>
+            <td class="text-dark" id="line-through">去超市</td>
+            <td class="text-secondary">不可编辑</td>
+            <td>
+                <form method="POST" action="{% url 'todolist:划掉' forloop.counter %}">
+                    {% csrf_token %}
+                    <input name="完成状态" type="hidden" value="未完成">
+                    <button type="submit" class="btn btn-danger btn-sm">撤销</button>
+                </form>
+            </td>
+            <td>
+                <form method="POST" action="{% url 'todolist:删除' forloop.counter %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">删除</button>
+                </form>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ 每一件事.待办事项 }}</td>
+            <td>
+                <a href="{% url 'todolist:编辑' forloop.counter %}">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block btn-sm">编辑</button>
+                </a>
+            </td>
+            <td>
+                <form method="POST" action="{% url 'todolist:划掉' forloop.counter %}">
+                    {% csrf_token %}
+                    <input name="完成状态" type="hidden" value="已完成">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block btn-sm">划掉</button>
+                </form>
+            </td>
+            <td>
+
+                <button data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-primary btn-lg btn-block btn-sm">删除</button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">请确认</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                确定要删除<strong>未办事项：{{ 每一件事.待办事项 }}</strong>吗?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                <form method="POST" action="{% url 'todolist:删除' forloop.counter %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">确认</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+
+        </tbody>
+    </table>
+<form method="POST" action="{% url 'processform:result_html' %}" align="center">
+    {% csrf_token %}
+    <button class="btn btn-success btn-lg btn-block" type="submit">添加论文</button>
+</form>
+</div>
+
+<br>
+<br>
+
+<h4 class="font-weight-bold" align="center">未查到的论文</h4>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead class="thead-light">
+        <tr>
+            <th>序号</th>
+            <th>论文名</th>
+            <th>期刊名</th>
+            <th>编辑</th>
+            <th>重新搜索</th>
+            <th>删除</th>
+        </tr>
+        </thead>
+        <tbody class="no-underline">
+
+        {% for 每一件事 in 清单 %}
+        {% if 每一件事.已完成 %}
+        <tr>
+            <th class="text-dark" scope="row">{{ forloop.counter }}</th>
+            <td class="text-dark" id="line-through1">去超市</td>
+            <td class="text-secondary">不可编辑</td>
+            <td>
+                <form method="POST" action="{% url 'todolist:划掉' forloop.counter %}">
+                    {% csrf_token %}
+                    <input name="完成状态" type="hidden" value="未完成">
+                    <button type="submit" class="btn btn-danger btn-sm">撤销</button>
+                </form>
+            </td>
+            <td>
+                <form method="POST" action="{% url 'todolist:删除' forloop.counter %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">删除</button>
+                </form>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ 每一件事.待办事项 }}</td>
+            <td>
+                <a href="{% url 'todolist:编辑' forloop.counter %}">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block btn-sm">编辑</button>
+                </a>
+            </td>
+            <td>
+                <form method="POST" action="{% url 'todolist:划掉' forloop.counter %}">
+                    {% csrf_token %}
+                    <input name="完成状态" type="hidden" value="已完成">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block btn-sm">划掉</button>
+                </form>
+            </td>
+            <td>
+
+                <button data-toggle="modal" data-target="#exampleModal" type="button" class="btn btn-primary btn-lg btn-block btn-sm">删除</button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel1">请确认</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                确定要删除<strong>未办事项：{{ 每一件事.待办事项 }}</strong>吗?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                                <form method="POST" action="{% url 'todolist:删除' forloop.counter %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">确认</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+<br>
+<br>
+<form method="POST" action="{% url 'processform:result_html' %}" align="center">
+    {% csrf_token %}
+    <button class="btn btn-primary" type="submit">提交论文结果</button>
+</form>
+
+{% endblock 主体 %}
+
