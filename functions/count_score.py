@@ -74,9 +74,9 @@ def assess_score(list_record, patents):
         total_if += record['if_avg']
         total_cites += record['cites']
 
-    total_score = jcr_score + math.log(total_if + 1) * math.log(total_cites + 1)\
+    total_score = jcr_score + math.log(total_if + 1) * math.log(total_cites + 1)
 
-    return total_score
+    return float('%.2f' % total_score)
 
 
 def title_recommend(four_youth_title, sum_esi, project_funding, sum_jcr12,

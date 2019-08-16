@@ -1,0 +1,52 @@
+{% extends 'process_form/base.html' %}
+{% load static %}
+{% block css %}{% static 'process_form/css/home.css' %}{% endblock css %}
+{% block 标题 %}编辑论文信息{% endblock 标题 %}
+{% block 主体 %}
+
+<h2 class="font-weight-bold" align="center">编辑界面{{ number }}</h2>
+
+<form id="form-edit" method="POST" action="">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="editTodo1"></label>
+        <input name="paper_name" class="form-control form-control-lg" id="editTodo1" type="text" value="{{ searched.paper_name }}">
+        <small id="help1" class="form-text text-muted">在这里编辑论文名</small>
+    </div>
+    <div class="form-group">
+        <label for="editTodo2"></label>
+        <input name="journal_name" class="form-control form-control-lg" id="editTodo2" type="text" value="{{ searched.journal_name }}">
+        <small id="help2" class="form-text text-muted">在这里编辑期刊名</small>
+    </div>
+    <div class="form-group">
+        <label for="editTodo3"></label>
+        <input name="fenqu" class="form-control form-control-lg" id="editTodo3" type="text" value="{{ searched.fenqu }}">
+        <small id="help3" class="form-text text-muted">在这里编辑分区</small>
+    </div>
+    <div class="form-group">
+        <label for="editTodo4"></label>
+        <input name="top" class="form-control form-control-lg" id="editTodo4" type="text" value="{{ searched.top }}">
+        <small id="help4" class="form-text text-muted">在这里编辑是否Top</small>
+    </div>
+    <div class="form-group">
+        <label for="editTodo5"></label>
+        <input name="if_avg" class="form-control form-control-lg" id="editTodo5" type="text" value="{{ searched.if_avg }}">
+        <small id="help5" class="form-text text-muted">在这里编辑影响因子</small>
+    </div>
+    <div class="form-group">
+        <label for="editTodo6"></label>
+        <input name="cites" class="form-control form-control-lg" id="editTodo6" type="text" value="{{ searched.cites }}">
+        <small id="help6" class="form-text text-muted">在这里编辑他引数</small>
+    </div>
+    <div class="form-group">
+        <label for="editTodo7"></label>
+        <input name="esi" class="form-control form-control-lg" id="editTodo7" type="text" value="{{ searched.esi }}">
+        <small id="help7" class="form-text text-muted">在这里编辑是否ESI高被引用</small>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">提交</button>
+    <br>
+    <br>
+    <br>
+</form>
+
+{% endblock 主体 %}
