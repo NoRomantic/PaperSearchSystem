@@ -9,14 +9,12 @@
 <form id="form-edit" method="POST" action="">
     {% csrf_token %}
     <div class="form-group">
-        <label for="editTodo1"></label>
+        <label for="editTodo1">在这里编辑论文名</label>
         <input name="paper_name" class="form-control form-control-lg" id="editTodo1" type="text" value="{{ searched.paper_name }}">
-        <small id="help1" class="form-text text-muted">在这里编辑论文名</small>
     </div>
     <div class="form-group">
-        <label for="editTodo2"></label>
+        <label for="editTodo2">在这里编辑期刊名</label>
         <input name="journal_name" class="form-control form-control-lg" id="editTodo2" type="text" value="{{ searched.journal_name }}">
-        <small id="help2" class="form-text text-muted">在这里编辑期刊名</small>
     </div>
 
     <button type="submit" class="btn btn-primary btn-lg btn-block">提交</button>

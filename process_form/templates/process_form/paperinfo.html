@@ -74,6 +74,14 @@
         </tbody>
     </table>
 
+    {% if 警告 %}
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		<strong><center>{{ 警告 }}</center></strong>
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	  </button>
+	</div>
+    {% endif %}
     <form method="GET" action="{% url 'processform:add_html' %}" align="center">
         {% csrf_token %}
         <button class="btn btn-success btn-lg btn-block" type="submit">手动添加论文</button>
@@ -152,6 +160,5 @@
     {% csrf_token %}
     <button class="btn btn-primary" type="submit">提交论文结果</button>
 </form>
-<br>
 <br>
 {% endblock 主体 %}

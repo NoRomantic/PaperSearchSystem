@@ -20,64 +20,68 @@ def about(request):
 def search(request):
     global list_searched, list_unsearched, dict_basicinfo
     if request.method == 'POST':
-        excel_file = request.FILES.get('表格')
-        excel_type = excel_file.name.split('.')[1]
-        if excel_type in ['xlsx']:
-            workbook = xlrd.open_workbook(filename=None, file_contents=excel_file.read())
-            # Read excel
-            basic_info = workbook.sheet_by_name('基本信息')
-            title_name = basic_info.cell_value(2, 2)
-            nsfc_funding_name = basic_info.cell_value(3, 2)
-            patent_sheet = workbook.sheet_by_name('专利')
-            patents = patent_sheet.col_values(2)[2:]
-            project_sheet = workbook.sheet_by_name('项目')
-            projects_fund = project_sheet.col_values(2)[2:]
-            
-            dict_basicinfo['title'] = title_name
-            dict_basicinfo['nsfc'] = nsfc_funding_name
-            dict_basicinfo['patents'] = patents
-            dict_basicinfo['funding'] = projects_fund
-
-            ''' Paper Search '''
-            paper_sheet = workbook.sheet_by_name('论文')
-            row_length = len(paper_sheet.col_values(1))
-            all_papers = []
-            # Append all paper infos
-            for i in range(2, row_length):
-                info = paper_sheet.row_values(i)[1: 8]
-                all_papers.append(info)
-
-            # Remove blank rows
-            exist_papers = [x for x in all_papers if (x[0] != '' and x[1] != '')]
-            exist_papers_infos = [x[0: 2] for x in exist_papers]
-
-            list_searched = list()
-            list_unsearched = list()  # To contain papers that have not been searched
-            for info in exist_papers_infos:
-                dict_record = dict()
-                pa_name = info[0].rstrip('\r\n')
-                jn_name = info[1].replace('&', 'and')
-
-                pa_info = get_paper_info(pa_name)
-                jn_info = get_journal_info(jn_name)
-                if jn_info is None:
-                    list_unsearched.append({'paper_name': pa_name, 'journal_name': jn_name})
-                else:
-                    dict_record['paper_name'] = pa_name
-                    dict_record['journal_name'] = jn_name
-                    dict_record['fenqu'] = jn_info['ZKY'][0]['Section']
-                    dict_record['top'] = jn_info['ZKY'][0]['Top']
-                    dict_record['if_avg'] = jn_info['Indicator']['IFavg']
-                    dict_record['cites'] = int(pa_info)
-                    dict_record['esi'] = False  # Default false
-                    list_searched.append(dict_record)
-            ''' Paper Search Finished '''
-
-            content = {'searched': list_searched, 'unsearched': list_unsearched}
-            return render(request, 'process_form/paperinfo.html', content)
-
+        if request.FILES.get('表格') is None:
+            return render(request, 'process_form/nofile.html')
+            # return redirect('processform:nofile_html')
         else:
-            return render(request, 'process_form/filefail.html')
+            excel_file = request.FILES.get('表格')
+            excel_type = excel_file.name.split('.')[1]
+            if excel_type in ['xlsx']:
+                workbook = xlrd.open_workbook(filename=None, file_contents=excel_file.read())
+                # Read excel
+                basic_info = workbook.sheet_by_name('基本信息')
+                title_name = basic_info.cell_value(2, 2)
+                nsfc_funding_name = basic_info.cell_value(3, 2)
+                patent_sheet = workbook.sheet_by_name('专利')
+                patents = patent_sheet.col_values(2)[2:]
+                project_sheet = workbook.sheet_by_name('项目')
+                projects_fund = project_sheet.col_values(2)[2:]
+
+                dict_basicinfo['title'] = title_name
+                dict_basicinfo['nsfc'] = nsfc_funding_name
+                dict_basicinfo['patents'] = patents
+                dict_basicinfo['funding'] = projects_fund
+
+                ''' Paper Search '''
+                paper_sheet = workbook.sheet_by_name('论文')
+                row_length = len(paper_sheet.col_values(1))
+                all_papers = []
+                # Append all paper infos
+                for i in range(2, row_length):
+                    info = paper_sheet.row_values(i)[1: 8]
+                    all_papers.append(info)
+
+                # Remove blank rows
+                exist_papers = [x for x in all_papers if (x[0] != '' and x[1] != '')]
+                exist_papers_infos = [x[0: 2] for x in exist_papers]
+
+                list_searched = list()
+                list_unsearched = list()  # To contain papers that have not been searched
+                for info in exist_papers_infos:
+                    dict_record = dict()
+                    pa_name = info[0].rstrip('\r\n')
+                    jn_name = info[1].replace('&', 'and')
+
+                    pa_info = get_paper_info(pa_name)
+                    jn_info = get_journal_info(jn_name)
+                    if jn_info is None:
+                        list_unsearched.append({'paper_name': pa_name, 'journal_name': jn_name})
+                    else:
+                        dict_record['paper_name'] = pa_name
+                        dict_record['journal_name'] = jn_name
+                        dict_record['fenqu'] = jn_info['ZKY'][0]['Section']
+                        dict_record['top'] = jn_info['ZKY'][0]['Top']
+                        dict_record['if_avg'] = jn_info['Indicator']['IFavg']
+                        dict_record['cites'] = int(pa_info)
+                        dict_record['esi'] = False  # Default false
+                        list_searched.append(dict_record)
+                ''' Paper Search Finished '''
+
+                content = {'searched': list_searched, 'unsearched': list_unsearched}
+                return render(request, 'process_form/paperinfo.html', content)
+
+            else:
+                return render(request, 'process_form/filefail.html')
 
 
 def result(request):
@@ -121,7 +125,7 @@ def result(request):
         'nsfc_key': nsfc_key,
         'nsfc_face': nsfc_face,
         'nsfc_youth': nsfc_youth,
-        'four_youth_title': four_youth_title,
+        'four_youth': four_youth_title,
         'esi_num': sum_esi,
         'total_funding': projects_fund,
     }
@@ -225,3 +229,8 @@ def research(request, forloop_counter):
     content = {'searched': list_searched, 'unsearched': list_unsearched}
 
     return render(request, 'process_form/paperinfo.html', content)
+
+
+def nofile(request):
+    if request.method == 'POST':
+        return redirect('processform:home_html')
