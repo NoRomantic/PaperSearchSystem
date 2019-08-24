@@ -7,6 +7,7 @@ from functions.paper_search import *
 list_searched = list()
 list_unsearched = list()
 dict_basicinfo = dict()
+my_cookies = dict()
 
 
 def home(request):
@@ -18,7 +19,7 @@ def about(request):
 
 
 def search(request):
-    global list_searched, list_unsearched, dict_basicinfo
+    global list_searched, list_unsearched, dict_basicinfo, my_cookies
     if request.method == 'POST':
         if request.FILES.get('表格') is None:
             return render(request, 'process_form/nofile.html')
@@ -57,14 +58,16 @@ def search(request):
 
                 list_searched = list()
                 list_unsearched = list()  # To contain papers that have not been searched
+                my_cookies = get_cookies()
+
                 for info in exist_papers_infos:
                     dict_record = dict()
                     pa_name = info[0].rstrip('\r\n')
                     jn_name = info[1].replace('&', 'and')
 
-                    pa_info = get_paper_info(pa_name)
+                    pa_info = get_paper_info(pa_name, my_cookies)
                     jn_info = get_journal_info(jn_name)
-                    if jn_info is None:
+                    if jn_info is None:  # If journal is not researched
                         list_unsearched.append({'paper_name': pa_name, 'journal_name': jn_name})
                     else:
                         dict_record['paper_name'] = pa_name
@@ -86,6 +89,7 @@ def search(request):
 
 def result(request):
     global dict_basicinfo
+    print(dict_basicinfo)
     patents = dict_basicinfo['patents']
     nsfc_funding_name = dict_basicinfo['nsfc']
     title_name = dict_basicinfo['title']
@@ -143,11 +147,11 @@ def edit(request, forloop_counter):
     elif request.method == 'POST':
         list_searched[int(forloop_counter) - 1]['paper_name'] = request.POST.get('paper_name')
         list_searched[int(forloop_counter) - 1]['journal_name'] = request.POST.get('journal_name')
-        list_searched[int(forloop_counter) - 1]['fenqu'] = request.POST.get('fenqu')
-        list_searched[int(forloop_counter) - 1]['top'] = request.POST.get('top')
-        list_searched[int(forloop_counter) - 1]['if_avg'] = request.POST.get('if_avg')
-        list_searched[int(forloop_counter) - 1]['cites'] = request.POST.get('cites')
-        list_searched[int(forloop_counter) - 1]['esi'] = request.POST.get('esi')
+        list_searched[int(forloop_counter) - 1]['fenqu'] = int(request.POST.get('fenqu'))
+        list_searched[int(forloop_counter) - 1]['top'] = bool(request.POST.get('top'))
+        list_searched[int(forloop_counter) - 1]['if_avg'] = float(request.POST.get('if_avg'))
+        list_searched[int(forloop_counter) - 1]['cites'] = int(request.POST.get('cites'))
+        list_searched[int(forloop_counter) - 1]['esi'] = bool(request.POST.get('esi'))
 
         return redirect("processform:paperinfo_html")
 
@@ -162,11 +166,11 @@ def edit_unsearched(request, forloop_counter):
     elif request.method == 'POST':
         list_unsearched[int(forloop_counter) - 1]['paper_name'] = request.POST.get('paper_name')
         list_unsearched[int(forloop_counter) - 1]['journal_name'] = request.POST.get('journal_name')
-        list_unsearched[int(forloop_counter) - 1]['fenqu'] = request.POST.get('fenqu')
-        list_unsearched[int(forloop_counter) - 1]['top'] = request.POST.get('top')
-        list_unsearched[int(forloop_counter) - 1]['if_avg'] = request.POST.get('if_avg')
-        list_unsearched[int(forloop_counter) - 1]['cites'] = request.POST.get('cites')
-        list_unsearched[int(forloop_counter) - 1]['esi'] = request.POST.get('esi')
+        # list_unsearched[int(forloop_counter) - 1]['fenqu'] = request.POST.get('fenqu')
+        # list_unsearched[int(forloop_counter) - 1]['top'] = request.POST.get('top')
+        # list_unsearched[int(forloop_counter) - 1]['if_avg'] = request.POST.get('if_avg')
+        # list_unsearched[int(forloop_counter) - 1]['cites'] = request.POST.get('cites')
+        # list_unsearched[int(forloop_counter) - 1]['esi'] = request.POST.get('esi')
 
         return redirect("processform:paperinfo_html")
 
@@ -209,10 +213,11 @@ def add(request):
 
 
 def research(request, forloop_counter):
+    global my_cookies
     pa_name = list_unsearched[int(forloop_counter) - 1]['paper_name']
     jn_name = list_unsearched[int(forloop_counter) - 1]['journal_name']
 
-    pa_info = get_paper_info(pa_name)
+    pa_info = get_paper_info(pa_name, my_cookies)
     jn_info = get_journal_info(jn_name)
     if jn_info is not None:
         list_unsearched.pop(int(forloop_counter) - 1)

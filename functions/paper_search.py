@@ -1,6 +1,8 @@
 import requests
 from lxml import etree
-
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+import time
 
 def get_journal_info(journal_name):
     url1 = 'https://webapi.fenqubiao.com/api/user/search?'
@@ -33,14 +35,13 @@ def get_journal_info(journal_name):
     return dict_info
 
 
-def get_paper_info(paper_name):
+def get_paper_info(paper_name, my_cookies):
     headers = {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
         'Accept-Encoding': 'gzip, deflate, br',
         'Accept-Language': 'en-US,en;q=0.9,zh;q=0.8,zh-TW;q=0.7,zh-CN;q=0.6',
         'Cache-Control': 'max-age=0',
         'Connection': 'keep-alive',
-        'Cookie': 'UM_distinctid=16bdbd547349c-0f56d61f2860fa-e343166-13c680-16bdbd547359b7; NID=188=SCq9JGQVG3wiRlc_kKrORp09p8rIS9JycX2tHbyUvjSUXG6pU-wYKtr-BYiNoOXEKue1XHzMwniDXUEaoJ8B_kmtjc4gWoavKjufmCgl-vvWl_LFH9LzXQ1EtTN8DKPcP4JLmVqCD_Env4O_i6zyICbJ0QBBV0IbYNBdDC6Q2No; GSP=NW=1:LM=1564621868:S=dTZn-sXwLNdzuMde; security_session_verify=7a4e20eb5ed52d55422bf2bbdc285d0e; security_session_mid_verify=aedd772e2a81a8ae4929d42b75f48ab9; CNZZDATA1273252441=695695754-1564578705-https%253A%252F%252Fgfsoso.99lb.net%252F%7C1565914513',
         'Host': 'c.glgoo.top',
         'Referer': 'https://c.glgoo.top/',
         'Upgrade-Insecure-Requests': '1',
@@ -48,18 +49,34 @@ def get_paper_info(paper_name):
     }
 
     parameters = {
-        'hl': 'zh-CN',
-        'as_sdt': '0,5',
         'q': paper_name,
-        'btnG': '',
     }
 
     url = 'https://c.glgoo.top/scholar?'
-    r1 = requests.get(url, headers=headers, params=parameters)
-    html = etree.HTML(r1.text)
-    # html_data2 = html.xpath('/html/head/title/text()')
+    response = requests.get(url, headers=headers, params=parameters, cookies=my_cookies)
+    html = etree.HTML(response.text)
     html_data = html.xpath('//*[@id="gs_res_ccl_mid"]/div/div[2]/div[3]/a[3]/text()')[0]
     if '被引用次数：' in html_data:
         return html_data.replace('被引用次数：', '')
     else:
         return 0
+
+
+def get_cookies():
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+
+    browser = webdriver.Chrome(options=chrome_options)
+    browser.get('https://c.glgoo.top/scholar?')
+    time.sleep(0.1)
+    # browser.implicitly_wait(5)
+
+    cookies = browser.get_cookies()
+    browser.quit()
+
+    my_cookies = dict()
+    for cookie in cookies:
+        my_cookies[cookie['name']] = cookie['value']
+
+    return my_cookies
