@@ -89,7 +89,7 @@ def search(request):
 
 def result(request):
     global dict_basicinfo
-    print(dict_basicinfo)
+    # print(dict_basicinfo)
     patents = dict_basicinfo['patents']
     nsfc_funding_name = dict_basicinfo['nsfc']
     title_name = dict_basicinfo['title']

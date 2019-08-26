@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
 
+
 def get_journal_info(journal_name):
     url1 = 'https://webapi.fenqubiao.com/api/user/search?'
     headers = {
@@ -42,8 +43,8 @@ def get_paper_info(paper_name, my_cookies):
         'Accept-Language': 'en-US,en;q=0.9,zh;q=0.8,zh-TW;q=0.7,zh-CN;q=0.6',
         'Cache-Control': 'max-age=0',
         'Connection': 'keep-alive',
-        'Host': 'c.glgoo.top',
-        'Referer': 'https://c.glgoo.top/',
+        'Host': 'f.glgoo.top',
+        'Referer': 'https://f.glgoo.top/',
         'Upgrade-Insecure-Requests': '1',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
     }
@@ -52,7 +53,7 @@ def get_paper_info(paper_name, my_cookies):
         'q': paper_name,
     }
 
-    url = 'https://c.glgoo.top/scholar?'
+    url = 'https://f.glgoo.top/scholar?'
     response = requests.get(url, headers=headers, params=parameters, cookies=my_cookies)
     html = etree.HTML(response.text)
     html_data = html.xpath('//*[@id="gs_res_ccl_mid"]/div/div[2]/div[3]/a[3]/text()')[0]
@@ -68,7 +69,7 @@ def get_cookies():
     chrome_options.add_argument('--disable-gpu')
 
     browser = webdriver.Chrome(options=chrome_options)
-    browser.get('https://c.glgoo.top/scholar?')
+    browser.get('https://f.glgoo.top/scholar?')
     time.sleep(0.1)
     # browser.implicitly_wait(5)
 
