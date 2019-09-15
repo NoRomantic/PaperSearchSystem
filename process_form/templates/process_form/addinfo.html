@@ -1,12 +1,12 @@
 {% extends 'process_form/base.html' %}
 {% load static %}
 {% block css %}{% static 'process_form/css/home.css' %}{% endblock css %}
-{% block 标题 %}编辑论文信息{% endblock 标题 %}
+{% block 标题 %}添加论文{% endblock 标题 %}
 {% block 主体 %}
 
-<h2 class="font-weight-bold" align="center">编辑界面{{ number }}</h2>
+<h2 class="font-weight-bold" align="center">添加论文界面{{ number }}</h2>
 
-<form id="form-edit" method="POST" action="">
+<form id="form-add" method="POST" action="">
     {% csrf_token %}
     <div class="form-group">
         <label for="editTodo1">在这里编辑论文名</label>
@@ -18,28 +18,29 @@
     </div>
     <div class="form-group">
         <label for="editTodo3">在这里编辑分区（整数1,2,3,4）</label>
-        <input name="fenqu" class="form-control form-control-lg" id="editTodo3" type="text" value="{{ searched.fenqu }}">
+        <input name="fenqu" class="form-control form-control-lg" id="editTodo3" type="text" value="">
     </div>
     <div class="form-group">
         <label for="editTodo4">在这里编辑是否Top(是，否)</label>
-        <input name="top" class="form-control form-control-lg" id="editTodo4" type="text" value="{{ searched.top }}">
+        <input name="top" class="form-control form-control-lg" id="editTodo4" type="text" value="">
     </div>
     <div class="form-group">
         <label for="editTodo5">在这里编辑影响因子（小数）</label>
-        <input name="if_avg" class="form-control form-control-lg" id="editTodo5" type="text" value="{{ searched.if_avg }}">
+        <input name="if_avg" class="form-control form-control-lg" id="editTodo5" type="text" value="">
     </div>
     <div class="form-group">
         <label for="editTodo6">在这里编辑他引数（整数）</label>
-        <input name="cites" class="form-control form-control-lg" id="editTodo6" type="text" value="{{ searched.cites }}">
+        <input name="cites" class="form-control form-control-lg" id="editTodo6" type="text" value="">
     </div>
     <div class="form-group">
         <label for="editTodo7">在这里编辑是否ESI高被引用(是，否)</label>
-        <input name="esi" class="form-control form-control-lg" id="editTodo7" type="text" value="{{ searched.esi }}">
+        <input name="esi" class="form-control form-control-lg" id="editTodo7" type="text" value="">
     </div>
-    <button type="submit" class="btn btn-primary btn-lg btn-block">提交</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">添加</button>
     <br>
     <br>
     <br>
 </form>
-
+<br>
+<br>
 {% endblock 主体 %}

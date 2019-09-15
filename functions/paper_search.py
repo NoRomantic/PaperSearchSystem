@@ -43,17 +43,19 @@ def get_paper_info(paper_name, my_cookies):
         'Accept-Language': 'en-US,en;q=0.9,zh;q=0.8,zh-TW;q=0.7,zh-CN;q=0.6',
         'Cache-Control': 'max-age=0',
         'Connection': 'keep-alive',
-        'Host': 'f.glgoo.top',
-        'Referer': 'https://f.glgoo.top/',
+        'Host': 'c.glgoo.top',
+        'Referer': 'https://c.glgoo.top/',
         'Upgrade-Insecure-Requests': '1',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
     }
 
     parameters = {
+        'hl': 'zh - CN',
         'q': paper_name,
+        'as_sdt': '0, 5',
     }
 
-    url = 'https://f.glgoo.top/scholar?'
+    url = 'https://c.glgoo.top/scholar?'
     response = requests.get(url, headers=headers, params=parameters, cookies=my_cookies)
     html = etree.HTML(response.text)
     html_data = html.xpath('//*[@id="gs_res_ccl_mid"]/div/div[2]/div[3]/a[3]/text()')[0]
@@ -69,7 +71,7 @@ def get_cookies():
     chrome_options.add_argument('--disable-gpu')
 
     browser = webdriver.Chrome(options=chrome_options)
-    browser.get('https://f.glgoo.top/scholar?')
+    browser.get('https://c.glgoo.top/scholar?')
     time.sleep(0.1)
     # browser.implicitly_wait(5)
 
@@ -79,5 +81,7 @@ def get_cookies():
     my_cookies = dict()
     for cookie in cookies:
         my_cookies[cookie['name']] = cookie['value']
+
+    # print(my_cookies)
 
     return my_cookies

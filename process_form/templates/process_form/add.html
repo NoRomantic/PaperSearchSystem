@@ -9,39 +9,32 @@
 <form id="form-add" method="POST" action="">
     {% csrf_token %}
     <div class="form-group">
-        <label for="editTodo1"></label>
+        <label for="editTodo1">在这里编辑论文名</label>
         <input name="paper_name" class="form-control form-control-lg" id="editTodo1" type="text" value="">
-        <small id="help1" class="form-text text-muted">在这里编辑论文名</small>
     </div>
     <div class="form-group">
-        <label for="editTodo2"></label>
+        <label for="editTodo2">在这里编辑期刊名</label>
         <input name="journal_name" class="form-control form-control-lg" id="editTodo2" type="text" value="">
-        <small id="help2" class="form-text text-muted">在这里编辑期刊名</small>
     </div>
     <div class="form-group">
-        <label for="editTodo3"></label>
+        <label for="editTodo3">在这里编辑分区（整数1,2,3,4）</label>
         <input name="fenqu" class="form-control form-control-lg" id="editTodo3" type="text" value="">
-        <small id="help3" class="form-text text-muted">在这里编辑分区</small>
     </div>
     <div class="form-group">
-        <label for="editTodo4"></label>
+        <label for="editTodo4">在这里编辑是否Top(是，否)</label>
         <input name="top" class="form-control form-control-lg" id="editTodo4" type="text" value="">
-        <small id="help4" class="form-text text-muted">在这里编辑是否Top</small>
     </div>
     <div class="form-group">
-        <label for="editTodo5"></label>
+        <label for="editTodo5">在这里编辑影响因子（小数）</label>
         <input name="if_avg" class="form-control form-control-lg" id="editTodo5" type="text" value="">
-        <small id="help5" class="form-text text-muted">在这里编辑影响因子</small>
     </div>
     <div class="form-group">
-        <label for="editTodo6"></label>
+        <label for="editTodo6">在这里编辑他引数（整数）</label>
         <input name="cites" class="form-control form-control-lg" id="editTodo6" type="text" value="">
-        <small id="help6" class="form-text text-muted">在这里编辑他引数</small>
     </div>
     <div class="form-group">
-        <label for="editTodo7"></label>
+        <label for="editTodo7">在这里编辑是否ESI高被引用(是，否)</label>
         <input name="esi" class="form-control form-control-lg" id="editTodo7" type="text" value="">
-        <small id="help7" class="form-text text-muted">在这里编辑是否ESI高被引用</small>
     </div>
     <button type="submit" class="btn btn-primary btn-lg btn-block">添加</button>
     <br>

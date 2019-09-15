@@ -27,7 +27,7 @@ def search(request):
         else:
             excel_file = request.FILES.get('表格')
             excel_type = excel_file.name.split('.')[1]
-            if excel_type in ['xlsx']:
+            if excel_type in ['xlsx', 'xls']:
                 workbook = xlrd.open_workbook(filename=None, file_contents=excel_file.read())
                 # Read excel
                 basic_info = workbook.sheet_by_name('基本信息')
@@ -58,6 +58,9 @@ def search(request):
 
                 list_searched = list()
                 list_unsearched = list()  # To contain papers that have not been searched
+                list_searched.clear()
+                list_unsearched.clear()
+                start_time = time.time()
                 my_cookies = get_cookies()
 
                 for info in exist_papers_infos:
@@ -73,12 +76,14 @@ def search(request):
                         dict_record['paper_name'] = pa_name
                         dict_record['journal_name'] = jn_name
                         dict_record['fenqu'] = jn_info['ZKY'][0]['Section']
-                        dict_record['top'] = jn_info['ZKY'][0]['Top']
+                        dict_record['top'] = '是' if jn_info['ZKY'][0]['Top'] else '否'
                         dict_record['if_avg'] = jn_info['Indicator']['IFavg']
                         dict_record['cites'] = int(pa_info)
-                        dict_record['esi'] = False  # Default false
+                        dict_record['esi'] = '否'  # Default false
                         list_searched.append(dict_record)
                 ''' Paper Search Finished '''
+                end_time = time.time()
+                print('Cost time: {:.0f}'.format(end_time - start_time))
 
                 content = {'searched': list_searched, 'unsearched': list_unsearched}
                 return render(request, 'process_form/paperinfo.html', content)
@@ -89,7 +94,6 @@ def search(request):
 
 def result(request):
     global dict_basicinfo
-    # print(dict_basicinfo)
     patents = dict_basicinfo['patents']
     nsfc_funding_name = dict_basicinfo['nsfc']
     title_name = dict_basicinfo['title']
@@ -98,7 +102,7 @@ def result(request):
     com_ind = assess_score(list_searched, patents)
     sum_esi, sum_jcr12, sum_cites = 0, 0, 0
     for record in list_searched:
-        if record['esi']:
+        if record['esi'] == '是':
             sum_esi += 1
         if record['fenqu'] <= 2:
             sum_jcr12 += 1
@@ -117,12 +121,12 @@ def result(request):
     for title in title_name:
         if title in ['院士', '千人', '杰青', '优青']:
             four_youth_title = True
-    projects_fund = sum([str(x) for x in projects_fund if x != ''])
+    projects_fund = sum([int(x) for x in projects_fund if x != ''])
 
     recommonded_title = title_recommend(four_youth_title, sum_esi, projects_fund, sum_jcr12,
                                         com_ind, sum_cites, nsfc_key, nsfc_face, nsfc_youth)
-    content = {
-        'recommonded_title': recommonded_title,
+    info = {
+        'recom_title': recommonded_title,
         'com_indi': com_ind,
         'jcr12': sum_jcr12,
         'total_cites': sum_cites,
@@ -133,6 +137,7 @@ def result(request):
         'esi_num': sum_esi,
         'total_funding': projects_fund,
     }
+    content = get_details(info)
 
     return render(request, 'process_form/result.html', content)
 
@@ -148,10 +153,10 @@ def edit(request, forloop_counter):
         list_searched[int(forloop_counter) - 1]['paper_name'] = request.POST.get('paper_name')
         list_searched[int(forloop_counter) - 1]['journal_name'] = request.POST.get('journal_name')
         list_searched[int(forloop_counter) - 1]['fenqu'] = int(request.POST.get('fenqu'))
-        list_searched[int(forloop_counter) - 1]['top'] = bool(request.POST.get('top'))
+        list_searched[int(forloop_counter) - 1]['top'] = request.POST.get('top')
         list_searched[int(forloop_counter) - 1]['if_avg'] = float(request.POST.get('if_avg'))
         list_searched[int(forloop_counter) - 1]['cites'] = int(request.POST.get('cites'))
-        list_searched[int(forloop_counter) - 1]['esi'] = bool(request.POST.get('esi'))
+        list_searched[int(forloop_counter) - 1]['esi'] = request.POST.get('esi')
 
         return redirect("processform:paperinfo_html")
 
@@ -166,11 +171,6 @@ def edit_unsearched(request, forloop_counter):
     elif request.method == 'POST':
         list_unsearched[int(forloop_counter) - 1]['paper_name'] = request.POST.get('paper_name')
         list_unsearched[int(forloop_counter) - 1]['journal_name'] = request.POST.get('journal_name')
-        # list_unsearched[int(forloop_counter) - 1]['fenqu'] = request.POST.get('fenqu')
-        # list_unsearched[int(forloop_counter) - 1]['top'] = request.POST.get('top')
-        # list_unsearched[int(forloop_counter) - 1]['if_avg'] = request.POST.get('if_avg')
-        # list_unsearched[int(forloop_counter) - 1]['cites'] = request.POST.get('cites')
-        # list_unsearched[int(forloop_counter) - 1]['esi'] = request.POST.get('esi')
 
         return redirect("processform:paperinfo_html")
 
@@ -195,7 +195,6 @@ def paperinfo(request):
 def add(request):
     global list_searched
     if request.method == 'GET':
-
         return render(request, 'process_form/add.html')
 
     elif request.method == 'POST':
@@ -228,7 +227,7 @@ def research(request, forloop_counter):
         dict_record['top'] = jn_info['ZKY'][0]['Top']
         dict_record['if_avg'] = jn_info['Indicator']['IFavg']
         dict_record['cites'] = int(pa_info)
-        dict_record['esi'] = False  # Default false
+        dict_record['esi'] = '否'  # Default false
         list_searched.append(dict_record)
 
     content = {'searched': list_searched, 'unsearched': list_unsearched}
@@ -239,3 +238,24 @@ def research(request, forloop_counter):
 def nofile(request):
     if request.method == 'POST':
         return redirect('processform:home_html')
+
+
+def addinfo(request, forloop_counter):
+    global list_searched, list_unsearched
+    if request.method == 'GET':
+        content = {'searched': list_unsearched[int(forloop_counter) - 1]}
+        return render(request, 'process_form/addinfo.html', content)
+
+    elif request.method == 'POST':
+        dict_tmp = dict()
+        dict_tmp['paper_name'] = request.POST.get('paper_name')
+        dict_tmp['journal_name'] = request.POST.get('journal_name')
+        dict_tmp['fenqu'] = int(request.POST.get('fenqu'))
+        dict_tmp['top'] = request.POST.get('top')
+        dict_tmp['if_avg'] = float(request.POST.get('if_avg'))
+        dict_tmp['cites'] = int(request.POST.get('cites'))
+        dict_tmp['esi'] = request.POST.get('esi')
+        list_searched.append(dict_tmp)
+        list_unsearched.pop(int(forloop_counter) - 1)
+
+        return redirect("processform:paperinfo_html")

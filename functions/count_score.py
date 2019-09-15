@@ -5,54 +5,54 @@ def count_jcr(paper_type, top, esi):
     """
 
     :param paper_type: string, JCR-1,2,3,4. CCF-A-B-C
-    :param top: bool, is top
+    :param top: str, '是' or '否'
     :param esi: bool, is ESI high citation
     :return: float, JCR index
     """
     if paper_type == 'CCF-A':
-        if esi:
+        if esi == '是':
             return 16
         else:
             return 6
     elif paper_type == 'CCF-B':
-        if esi:
+        if esi == '是':
             return 11
         else:
             return 4
     elif paper_type == 'CCF-C':
-        if esi:
+        if esi == '是':
             return 3
         else:
             return 2
     elif paper_type == 1:  # JCR-1
-        if top:
-            if esi:
+        if top == '是':
+            if esi == '是':
                 return 17
             else:
                 return 7
         else:
-            if esi:
+            if esi == '是':
                 return 15
             else:
                 return 5
     elif paper_type == 2:  # JCR-2
-        if top:
-            if esi:
+        if top == '是':
+            if esi == '是':
                 return 11
             else:
                 return 4
         else:
-            if esi:
+            if esi == '是':
                 return 10
             else:
                 return 3
     elif paper_type == 3:  # JCR-3
-        if esi:
+        if esi == '是':
             return 3
         else:
             return 2
     elif paper_type == 4:  # JCR-4
-        if esi:
+        if esi == '是':
             return 2
         else:
             return 1
@@ -149,3 +149,64 @@ def title_recommend(four_youth_title, sum_esi, project_funding, sum_jcr12,
         return '讲师'
     else:
         return '无'
+
+
+def get_details(info):
+    content = dict()
+    if info['recom_title'] == '教授':
+        content['professor'] = '√'
+        content['prof_four_youth'] = '√' if info['four_youth'] else ' '
+        content['prof_esi_num'] = '√' if info['esi_num'] >= 1 else ' '
+        content['prof_total_funding'] = '√' if info['total_funding'] >= 300 else ' '
+    elif info['recom_title'] == '见习教授':
+        content['trainee_prof'] = '√'
+    elif info['recom_title'] == '副教授':
+        content['asso_prof'] = '√'
+    elif info['recom_title'] == '见习副教授':
+        content['trainee_asso_prof'] = '√'
+    elif info['recom_title'] == '讲师':
+        content['lecturer'] = '√'
+
+    if info['jcr12'] >= 5:
+        content['prof_jcr12'] = '√'
+    elif info['jcr12'] >= 4:
+        content['trainee_prof_jcr12'] = '√'
+    elif info['jcr12'] >= 3:
+        content['asso_prof_jcr12'] = '√'
+    elif info['jcr12'] >= 2:
+        content['trainee_asso_prof_jcr12'] = '√'
+    elif info['jcr12'] >= 1:
+        content['lecturer_jcr12'] = '√'
+
+    if info['com_indi'] >= 50:
+        content['prof_com_indi'] = '√'
+    elif info['com_indi'] >= 40:
+        content['trainee_prof_com_indi'] = '√'
+    elif info['com_indi'] >= 30:
+        content['asso_prof_com_indi'] = '√'
+    elif info['com_indi'] >= 20:
+        content['trainee_asso_prof_com_indi'] = '√'
+    elif info['com_indi'] >= 5:
+        content['lecturer_com_indi'] = '√'
+
+    if info['total_cites'] >= 50:
+        content['prof_total_cites'] = '√'
+    elif info['total_cites'] >= 40:
+        content['trainee_prof_total_cites'] = '√'
+    elif info['total_cites'] >= 30:
+        content['asso_prof_total_cites'] = '√'
+    elif info['total_cites'] >= 20:
+        content['trainee_asso_prof_total_cites'] = '√'
+    elif info['total_cites'] >= 7:
+        content['lecturer_total_cites'] = '√'
+
+    content['prof_nsfc_key'] = '√' if info['nsfc_key'] else ' '  # True or 是
+    if info['nsfc_key']:
+        content['prof_nsfc_key'] = '√'
+        content['trainee_prof_nsfc_key'] = '√'
+    if info['nsfc_face']:
+        content['asso_prof_nsfc_key'] = '√'
+    if info['nsfc_youth']:
+        content['trainee_asso_prof_nsfc_key'] = '√'
+
+    return content

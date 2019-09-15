@@ -5,24 +5,127 @@
 {% block 上传表格高亮 %}active{% endblock 上传表格高亮 %}
 {% block 主体 %}
 
-<h2 class="font-weight-bold" align="center">定岗推荐页面</h2>
+<h2 class="font-weight-bold" align="center">定岗推荐</h2>
 
-<ul class="list-group">
-  <li class="list-group-item text-white bg-primary">综合指标得分：      {{ com_indi }}</li>
-  <li class="list-group-item text-white bg-secondary">JCR分区 I&II 之和： {{ jcr12 }}</li>
-  <li class="list-group-item text-white bg-success">SCI他引之和：       {{ total_cites }}</li>
-  <li class="list-group-item text-dark bg-warning">NSFC重点基金：      {{ nsfc_key }}</li>
-  <li class="list-group-item text-white bg-info">NSFC面上基金：      {{ nsfc_face }}</li>
-  <li class="list-group-item text-dark bg-light">NSFC青年基金：      {{ nsfc_youth }}</li>
-  <li class="list-group-item text-white bg-dark">是否 4青之一：      {{ four_youth }}</li>
-  <li class="list-group-item text-dark bg-transparent">ESI 论文数：        {{ esi_num }}</li>
-  <li class="list-group-item text-dark bg-white">项目总金额（万元）：{{ total_funding }}</li>
-</ul>
+<!--<ul class="list-group">-->
+<!--  <li class="list-group-item text-white bg-primary">综合指标得分：      {{ com_indi }}</li>-->
+<!--  <li class="list-group-item text-white bg-secondary">JCR分区 I&II 之和： {{ jcr12 }}</li>-->
+<!--  <li class="list-group-item text-white bg-success">SCI他引之和：       {{ total_cites }}</li>-->
+<!--  <li class="list-group-item text-dark bg-warning">NSFC重点基金：      {{ nsfc_key }}</li>-->
+<!--  <li class="list-group-item text-white bg-info">NSFC面上基金：      {{ nsfc_face }}</li>-->
+<!--  <li class="list-group-item text-dark bg-light">NSFC青年基金：      {{ nsfc_youth }}</li>-->
+<!--  <li class="list-group-item text-white bg-dark">是否 4青之一：      {{ four_youth }}</li>-->
+<!--  <li class="list-group-item text-dark bg-transparent">ESI 论文数：        {{ esi_num }}</li>-->
+<!--  <li class="list-group-item text-dark bg-white">项目总金额（万元）：{{ total_funding }}</li>-->
+<!--</ul>-->
+<!--<br>-->
+
+
 <br>
-<div class="card">
-  <div class="card-body text-danger bg-warning">
-    <h3>定岗推荐：{{ recommonded_title }}</h3>
-  </div>
-</div>
+<table class="table table-bordered" id="tables">
+    <thead class="table-dark">
+    <tr>
+        <th scope="col" style='vertical-align: middle;text-align: center;'>达标状态</th>
+        <th colspan="9" style='vertical-align: middle;text-align: center;'>引进人才基本条件 任选二</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="table-active">
+        <th scope="row" style='vertical-align: middle;text-align: center;'>{{ lecturer }}</th>
+        <td align="center">讲师</td>
+        <td align="center">{{ lecturer_jcr12 }}</td>
+        <td colspan="1">JCR分区 I&II 之和 >=1</td>
+        <td align="center">{{ lecturer_com_indi }}</td>
+        <td colspan="1">综合指标>=5</td>
+        <td align="center">{{ lecturer_total_cites }}</td>
+        <td colspan="1">SCI他引之和>=7</td>
+        <td colspan="2"></td>
+    </tr>
+    <tr class="table-active">
+        <th scope="row" style='vertical-align: middle;text-align: center;'>{{ trainee_asso_prof }}</th>
+        <td align="center">见习副教授</td>
+        <td align="center">{{ trainee_asso_prof_jcr12 }}</td>
+        <td colspan="1">JCR分区 I&II 之和 >=2</td>
+        <td align="center">{{ trainee_asso_prof_com_indi }}</td>
+        <td colspan="1">综合指标>=20</td>
+        <td align="center">{{ trainee_asso_prof_total_cites }}</td>
+        <td colspan="1">SCI他引之和>=20</td>
+        <td align="center">{{ trainee_asso_prof_nsfc_key }}</td>
+        <td colspan="1">NSFC青年基金</td>
+    </tr>
+    <tr class="table-active">
+        <th scope="row" style='vertical-align: middle;text-align: center;'>{{ asso_prof }}</th>
+        <td align="center">副教授</td>
+        <td align="center">{{ asso_prof_jcr12 }}</td>
+        <td colspan="1">JCR分区 I&II 之和 >=3</td>
+        <td align="center">{{ asso_prof_com_indi }}</td>
+        <td colspan="1">综合指标>=30</td>
+        <td align="center">{{ asso_prof_total_cites }}</td>
+        <td colspan="1">SCI他引之和>=30</td>
+        <td align="center">{{ asso_prof_nsfc_key }}</td>
+        <td colspan="1">NSFC面上基金</td>
+    </tr>
+    <tr class="table-active">
+        <th scope="row" style='vertical-align: middle;text-align: center;'>{{ trainee_prof }}</th>
+        <td align="center">见习教授</td>
+        <td align="center">{{ trainee_prof_jcr12 }}</td>
+        <td colspan="1">JCR分区 I&II 之和 >=4</td>
+        <td align="center">{{ trainee_prof_com_indi }}</td>
+        <td colspan="1">综合指标>=40</td>
+        <td align="center">{{ trainee_prof_total_cites }}</td>
+        <td colspan="1">SCI他引之和>=40</td>
+        <td align="center">{{ trainee_prof_nsfc_key }}</td>
+        <td colspan="1">NSFC重点基金</td>
+    </tr>
+    <tr class="table-active">
+        <th rowspan="2" style='vertical-align: middle;text-align: center;'>{{ professor }}</th>
+        <td rowspan="2" style='vertical-align: middle;text-align: center;'>教授</td>
+        <td align="center">{{ prof_jcr12 }}</td>
+        <td colspan="1">JCR分区 I&II 之和 >=5</td>
+        <td align="center">{{ prof_com_indi }}</td>
+        <td colspan="1">综合指标>=50</td>
+        <td align="center">{{ prof_total_cites }}</td>
+        <td colspan="1">SCI他引之和>=50</td>
+        <td align="center">{{ prof_nsfc_key }}</td>
+        <td colspan="1">NSFC重点基金</td>
+    </tr>
+    <tr class="table-active">
+        <td align="center">{{ prof_four_youth }}</td>
+        <td colspan="1">四青之一</td>
+        <td align="center">{{ prof_esi_num }}</td>
+        <td colspan="1">ESI至少1篇</td>
+        <td align="center">{{ prof_total_funding }}</td>
+        <td colspan="4">负责实施项目经费总额超过 300 万</td>
+    </tr>
+    </tbody>
+</table>
+
+
+<a id="dlink" style="display:none;"></a>
+<input type="button" class="btn btn-primary" style="display:block;margin:0 auto" onclick="tableToExcel('tables', 'name', 'myfile.xls')" value="导出到excel表格">
+
+<script type="text/javascript">
+        var tableToExcel = (function () {
+            var uri = 'data:application/vnd.ms-excel;base64,',
+                template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
+                base64 = function (s) { return window.btoa(unescape(encodeURIComponent(s))) },
+                format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) };
+            return function (table, name, filename) {
+                if (!table.nodeType) table = document.getElementById(table)
+                var ctx = { worksheet: name || 'Worksheet', table: table.innerHTML }
+
+                document.getElementById("dlink").href = uri + base64(format(template, ctx));
+                document.getElementById("dlink").download = filename;
+                document.getElementById("dlink").click();
+            }
+        })()
+
+</script>
+
+<!--<div class="card">-->
+<!--  <div class="card-body text-danger bg-warning">-->
+<!--    <h3>定岗推荐：{{ recommonded_title }}</h3>-->
+<!--  </div>-->
+<!--</div>-->
 
 {% endblock 主体 %}

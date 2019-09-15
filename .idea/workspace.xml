@@ -13,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/process_form/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="1016">
+              <caret line="141" selection-start-line="141" selection-end-line="141" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -23,10 +23,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/edit.html">
+        <entry file="file://$PROJECT_DIR$/functions/count_score.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+            <state relative-caret-position="-268">
+              <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
             </state>
           </provider>
         </entry>
@@ -34,26 +34,70 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/edit_unsearched.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+            <state relative-caret-position="277">
+              <caret line="16" column="125" selection-start-line="16" selection-start-column="125" selection-end-line="16" selection-end-column="125" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/count_score.py">
+        <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+            <state relative-caret-position="630">
+              <caret line="35" column="50" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/paper_search.py">
+        <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="3" selection-start-column="3" selection-end-column="3" />
+            <state relative-caret-position="630">
+              <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/addinfo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/result.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="58" column="34" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="34" />
+              <folding>
+                <element signature="e#4677#4698#0" expanded="true" />
+                <element signature="e#4749#4784#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/paperinfo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="116" column="20" lean-forward="true" selection-start-line="116" selection-start-column="20" selection-end-line="116" selection-end-column="20" />
+              <folding>
+                <element signature="e#2439#2446#1" expanded="true" />
+                <element signature="e#3617#3624#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/assess_score.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="72" column="56" lean-forward="true" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -61,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_form/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+            <state relative-caret-position="306">
+              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -82,13 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>insta</find>
-      <find>theme.html</find>
-      <find>tmp</find>
-      <find>upload</find>
-      <find>static</find>
-      <find>主页高亮</find>
-      <find>png</find>
       <find>待办清单</find>
       <find>center</find>
       <find>btn btn-primary</find>
@@ -110,6 +147,15 @@
       <find>paperinfo.html</find>
       <find>my_cookie</find>
       <find>print</find>
+      <find>colspan=&quot;2&quot;</find>
+      <find>&lt;td&gt;√&lt;/td&gt;</find>
+      <find>&lt;td&gt; &lt;/td&gt;</find>
+      <find>&lt;td align=&quot;center&quot;&gt;√&lt;/td&gt;</find>
+      <find>√</find>
+      <find>align=&quot;right&quot;</find>
+      <find>top</find>
+      <find>esi</find>
+      <find>asso</find>
     </findStrings>
     <replaceStrings>
       <replace>record</replace>
@@ -124,6 +170,12 @@
       <replace>list_unsearched</replace>
       <replace>dict_basicinfo</replace>
       <replace>text-white bg-primary&quot;</replace>
+      <replace>colspan=&quot;1&quot;</replace>
+      <replace>&lt;td align=&quot;center&quot;&gt;√&lt;/td&gt;</replace>
+      <replace>&lt;td align=&quot;center&quot;&gt; &lt;/td&gt;</replace>
+      <replace>&lt;td align=&quot;right&quot;&gt;√&lt;/td&gt;</replace>
+      <replace>{{  }}</replace>
+      <replace>align=&quot;center&quot;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -149,29 +201,32 @@
         <option value="$PROJECT_DIR$/process_form/templates/process_form/about.html" />
         <option value="$PROJECT_DIR$/process_form/static/process_form/css/base.css" />
         <option value="$PROJECT_DIR$/process_form/templates/process_form/search.html" />
-        <option value="$PROJECT_DIR$/process_form/templates/process_form/add.html" />
-        <option value="$PROJECT_DIR$/process_form/templates/process_form/home.html" />
         <option value="$PROJECT_DIR$/process_form/templates/process_form/research.html" />
-        <option value="$PROJECT_DIR$/functions/count_score.py" />
-        <option value="$PROJECT_DIR$/process_form/templates/process_form/edit_unsearched.html" />
-        <option value="$PROJECT_DIR$/process_form/templates/process_form/result.html" />
-        <option value="$PROJECT_DIR$/process_form/urls.py" />
         <option value="$PROJECT_DIR$/process_form/templates/process_form/nofile.html" />
         <option value="$PROJECT_DIR$/process_form/templates/process_form/filefail.html" />
         <option value="$PROJECT_DIR$/系统剩余内容.txt" />
-        <option value="$PROJECT_DIR$/process_form/templates/process_form/paperinfo.html" />
         <option value="$PROJECT_DIR$/process_form/templates/process_form/base.html" />
-        <option value="$PROJECT_DIR$/process_form/templates/process_form/edit.html" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/tmp.html" />
+        <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/result.html" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/home.html" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/paperinfo.html" />
+        <option value="$PROJECT_DIR$/process_form/urls.py" />
         <option value="$PROJECT_DIR$/functions/paper_search.py" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/edit_unsearched.html" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/edit.html" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/add.html" />
+        <option value="$PROJECT_DIR$/process_form/templates/process_form/addinfo.html" />
         <option value="$PROJECT_DIR$/process_form/views.py" />
+        <option value="$PROJECT_DIR$/functions/count_score.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="35" />
+    <option name="y" value="-20" />
+    <option name="width" value="1820" />
+    <option name="height" value="1095" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -199,27 +254,6 @@
               <item name="PaperSearchSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="PaperSearchSystem" type="462c0819:PsiDirectoryNode" />
               <item name="process_form" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PaperSearchSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PaperSearchSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="process_form" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="process_form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PaperSearchSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PaperSearchSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="process_form" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="process_form" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PaperSearchSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PaperSearchSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="process_form" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -239,19 +273,19 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/process_form/templates/process_form" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\WuQinzhu\Desktop\Git_Repos\PaperSearchSystem\process_form\templates\process_form" />
+      <recent name="C:\Users\WuQinzhu\Desktop\Git_Repos\PaperSearchSystem\process_form\static\process_form\css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\WuQinzhu\Desktop\Git_Repos\PaperSearchSystem\process_form\templates\process_form" />
       <recent name="C:\Users\WuQinzhu\Desktop\Git_Repos\PaperSearchSystem\process_form\templates" />
       <recent name="C:\Users\WuQinzhu\Desktop\Git_Repos\PaperSearchSystem\process_form" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\WuQinzhu\Desktop\Git_Repos\PaperSearchSystem\process_form\templates\process_form" />
-      <recent name="C:\Users\WuQinzhu\Desktop\Git_Repos\PaperSearchSystem\process_form\static\process_form\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -367,24 +401,43 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17239101" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16116248" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4220963" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.45609066" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35835695" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4490085" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16116248" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35835695" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4490085" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
@@ -396,6 +449,11 @@
           <url>file://$PROJECT_DIR$/../test.py</url>
           <line>10</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/process_form/views.py</url>
+          <line>139</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -466,13 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/assess_score.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="86" column="66" selection-start-line="86" selection-start-column="66" selection-end-line="86" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebOfScience/WebOfScience/middlewares.py" />
     <entry file="file://$PROJECT_DIR$/WebOfScience/WebOfScience/items.py" />
     <entry file="file://$PROJECT_DIR$/WebOfScience/WebOfScience/pipelines.py" />
@@ -518,28 +569,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="51" column="4" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/research.html" />
-    <entry file="file://$PROJECT_DIR$/process_form/static/process_form/css/home.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_form/static/process_form/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -557,34 +591,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/系统剩余内容.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/系统剩余内容.txt" />
+    <entry file="file://$PROJECT_DIR$/process_form/static/process_form/icons/head.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="54">
+          <caret line="24" column="68" lean-forward="true" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/paperinfo.html">
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/tmp.html" />
+    <entry file="file://$PROJECT_DIR$/process_form/static/process_form/css/home.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
+        <state relative-caret-position="306">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="45" selection-end-line="1" />
           <folding>
-            <element signature="e#2439#2446#1" expanded="true" />
-            <element signature="e#3617#3624#1" expanded="true" />
+            <element signature="e#1375#1396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/paper_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -592,45 +636,81 @@
     <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
-          <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/edit_unsearched.html">
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        <state relative-caret-position="630">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/process_form/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+        <state relative-caret-position="306">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/count_score.py">
+    <entry file="file://$PROJECT_DIR$/functions/assess_score.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+        <state relative-caret-position="139">
+          <caret line="72" column="56" lean-forward="true" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/paper_search.py">
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/edit_unsearched.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        <state relative-caret-position="277">
+          <caret line="16" column="125" selection-start-line="16" selection-start-column="125" selection-end-line="16" selection-end-column="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/addinfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/paperinfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="116" column="20" lean-forward="true" selection-start-line="116" selection-start-column="20" selection-end-line="116" selection-end-column="20" />
+          <folding>
+            <element signature="e#2439#2446#1" expanded="true" />
+            <element signature="e#3617#3624#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_form/templates/process_form/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="58" column="34" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="34" />
+          <folding>
+            <element signature="e#4677#4698#0" expanded="true" />
+            <element signature="e#4749#4784#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/count_score.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-268">
+          <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/process_form/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        <state relative-caret-position="1016">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
