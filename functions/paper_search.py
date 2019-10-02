@@ -58,9 +58,15 @@ def get_paper_info(paper_name, my_cookies):
     url = 'https://c.glgoo.top/scholar?'
     response = requests.get(url, headers=headers, params=parameters, cookies=my_cookies)
     html = etree.HTML(response.text)
-    html_data = html.xpath('//*[@id="gs_res_ccl_mid"]/div/div[2]/div[3]/a[3]/text()')[0]
-    if '被引用次数：' in html_data:
-        return html_data.replace('被引用次数：', '')
+    html_data = html.xpath('//*[@id="gs_res_ccl_mid"]/div/div[2]/div[3]/a[3]/text()')
+    if len(html_data) != 0:
+        if len(html_data) == 1:
+            if '被引用次数：' in html_data[0]:
+                return html_data[0].replace('被引用次数：', '')
+            else:
+                return 0
+        else:
+            return -1  # A sign for paper unsearched
     else:
         return 0
 

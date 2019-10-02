@@ -44,7 +44,7 @@ def search(request):
                 dict_basicinfo['funding'] = projects_fund
 
                 ''' Paper Search '''
-                paper_sheet = workbook.sheet_by_name('论文')
+                paper_sheet = workbook.sheet_by_name('期刊论文')
                 row_length = len(paper_sheet.col_values(1))
                 all_papers = []
                 # Append all paper infos
@@ -70,7 +70,7 @@ def search(request):
 
                     pa_info = get_paper_info(pa_name, my_cookies)
                     jn_info = get_journal_info(jn_name)
-                    if jn_info is None:  # If journal is not researched
+                    if pa_info == -1 or jn_info is None:  # If paper is not researched
                         list_unsearched.append({'paper_name': pa_name, 'journal_name': jn_name})
                     else:
                         dict_record['paper_name'] = pa_name
@@ -224,7 +224,7 @@ def research(request, forloop_counter):
         dict_record['paper_name'] = pa_name
         dict_record['journal_name'] = jn_name
         dict_record['fenqu'] = jn_info['ZKY'][0]['Section']
-        dict_record['top'] = jn_info['ZKY'][0]['Top']
+        dict_record['top'] = '是' if jn_info['ZKY'][0]['Top'] else '否'
         dict_record['if_avg'] = jn_info['Indicator']['IFavg']
         dict_record['cites'] = int(pa_info)
         dict_record['esi'] = '否'  # Default false
