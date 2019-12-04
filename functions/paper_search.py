@@ -1,14 +1,15 @@
+import time
+import random
 import requests
 from lxml import etree
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import time
 
 
 def get_journal_info(journal_name):
     url1 = 'https://webapi.fenqubiao.com/api/user/search?'
     headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36',
     }
     parameters1 = {
         'year': '2017',
@@ -46,7 +47,8 @@ def get_paper_info(paper_name, my_cookies):
         'Host': 'c.glgoo.top',
         'Referer': 'https://c.glgoo.top/',
         'Upgrade-Insecure-Requests': '1',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36',
+        # 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36',
     }
 
     parameters = {
@@ -57,8 +59,11 @@ def get_paper_info(paper_name, my_cookies):
 
     url = 'https://c.glgoo.top/scholar?'
     response = requests.get(url, headers=headers, params=parameters, cookies=my_cookies)
+    # print(my_cookies)
+    # print(response.cookies)
     html = etree.HTML(response.text)
     html_data = html.xpath('//*[@id="gs_res_ccl_mid"]/div/div[2]/div[3]/a[3]/text()')
+    time.sleep(random.randint(1, 5))
     if len(html_data) != 0:
         if len(html_data) == 1:
             if '被引用次数：' in html_data[0]:

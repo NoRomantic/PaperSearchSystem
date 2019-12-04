@@ -16,5 +16,7 @@ urlpatterns = [
     path('add/', views.add, name='add_html'),
     path('research/<forloop_counter>', views.research, name='research_html'),
     path('nofile/', views.nofile, name='nofile_html'),
+    path('download/', views.download, name='download_html'),
     path('addinfo/<forloop_counter>', views.addinfo, name='add_info'),
 ]
+

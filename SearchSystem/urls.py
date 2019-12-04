@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from process_form import views
 
 
 urlpatterns = [
+    path('home/', views.home),
     path('admin/', admin.site.urls, name='管理员页面'),
     path('processform/', include('process_form.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

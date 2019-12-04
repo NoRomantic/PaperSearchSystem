@@ -76,7 +76,7 @@ def assess_score(list_record, patents):
 
     total_score = jcr_score + math.log(total_if + 1) * math.log(total_cites + 1)
 
-    return float('%.2f' % total_score)
+    return total_score, jcr_score, total_if, total_cites
 
 
 def title_recommend(four_youth_title, sum_esi, project_funding, sum_jcr12,
@@ -153,19 +153,77 @@ def title_recommend(four_youth_title, sum_esi, project_funding, sum_jcr12,
 
 def get_details(info):
     content = dict()
+    content['professor'] = ''
+    content['trainee_prof'] = ''
+    content['asso_prof'] = ''
+    content['trainee_asso_prof'] = ''
+    content['lecturer'] = ''
+    content['prof_jcr12'] = ''
+    content['trainee_prof_jcr12'] = ''
+    content['asso_prof_jcr12'] = ''
+    content['trainee_asso_prof_jcr12'] = ''
+    content['lecturer_jcr12'] = ''
+    content['prof_four_youth'] = ''
+    content['prof_esi_num'] = ''
+    content['prof_total_funding'] = ''
+    content['prof_com_indi'] = ''
+    content['trainee_prof_com_indi'] = ''
+    content['asso_prof_com_indi'] = ''
+    content['trainee_asso_prof_com_indi'] = ''
+    content['lecturer_com_indi'] = ''
+    content['prof_total_cites'] = ''
+    content['trainee_prof_total_cites'] = ''
+    content['asso_prof_total_cites'] = ''
+    content['trainee_asso_prof_total_cites'] = ''
+    content['lecturer_total_cites'] = ''
+    content['trainee_asso_prof_nsfc_key'] = ''
+    content['asso_prof_nsfc_key'] = ''
+    content['trainee_prof_nsfc_key'] = ''
+    content['prof_nsfc_key'] = ''
+
     if info['recom_title'] == '教授':
         content['professor'] = '√'
-        content['prof_four_youth'] = '√' if info['four_youth'] else ' '
-        content['prof_esi_num'] = '√' if info['esi_num'] >= 1 else ' '
-        content['prof_total_funding'] = '√' if info['total_funding'] >= 300 else ' '
+        content['prof_four_youth'] = '√' if info['four_youth'] else ''
+        content['prof_esi_num'] = '√' if info['esi_num'] >= 1 else ''
+        content['prof_total_funding'] = '√' if info['total_funding'] >= 300 else ''
+        if info['jcr12'] >= 5:
+            content['prof_jcr12'] = '√'
+        if info['com_indi'] >= 50:
+            content['prof_com_indi'] = '√'
+        if info['total_cites'] >= 50:
+            content['prof_total_cites'] = '√'
     elif info['recom_title'] == '见习教授':
         content['trainee_prof'] = '√'
+        if info['jcr12'] >= 4:
+            content['trainee_prof_jcr12'] = '√'
+        if info['com_indi'] >= 40:
+            content['trainee_prof_com_indi'] = '√'
+        if info['total_cites'] >= 40:
+            content['trainee_prof_total_cites'] = '√'
     elif info['recom_title'] == '副教授':
         content['asso_prof'] = '√'
+        if info['jcr12'] >= 3:
+            content['asso_prof_jcr12'] = '√'
+        if info['com_indi'] >= 30:
+            content['asso_prof_com_indi'] = '√'
+        if info['total_cites'] >= 30:
+            content['asso_prof_total_cites'] = '√'
     elif info['recom_title'] == '见习副教授':
         content['trainee_asso_prof'] = '√'
+        if info['jcr12'] >= 2:
+            content['trainee_asso_prof_jcr12'] = '√'
+        if info['com_indi'] >= 20:
+            content['trainee_asso_prof_com_indi'] = '√'
+        if info['total_cites'] >= 20:
+            content['trainee_asso_prof_total_cites'] = '√'
     elif info['recom_title'] == '讲师':
         content['lecturer'] = '√'
+        if info['jcr12'] >= 1:
+            content['lecturer_jcr12'] = '√'
+        if info['com_indi'] >= 5:
+            content['lecturer_com_indi'] = '√'
+        if info['total_cites'] >= 7:
+            content['lecturer_total_cites'] = '√'
 
     if info['jcr12'] >= 5:
         content['prof_jcr12'] = '√'
@@ -200,7 +258,7 @@ def get_details(info):
     elif info['total_cites'] >= 7:
         content['lecturer_total_cites'] = '√'
 
-    content['prof_nsfc_key'] = '√' if info['nsfc_key'] else ' '  # True or 是
+    content['prof_nsfc_key'] = '√' if info['nsfc_key'] else ''  # True or 是
     if info['nsfc_key']:
         content['prof_nsfc_key'] = '√'
         content['trainee_prof_nsfc_key'] = '√'

@@ -1,9 +1,12 @@
 import xlrd
+from django.http import FileResponse
 from django.shortcuts import render, redirect
 from functions.count_score import *
 from functions.paper_search import *
+from functions.read_excel import *
 
 
+# 模拟数据库功能
 list_searched = list()
 list_unsearched = list()
 dict_basicinfo = dict()
@@ -23,11 +26,10 @@ def search(request):
     if request.method == 'POST':
         if request.FILES.get('表格') is None:
             return render(request, 'process_form/nofile.html')
-            # return redirect('processform:nofile_html')
         else:
             excel_file = request.FILES.get('表格')
             excel_type = excel_file.name.split('.')[1]
-            if excel_type in ['xlsx', 'xls']:
+            if excel_type in ['xlsx']:
                 workbook = xlrd.open_workbook(filename=None, file_contents=excel_file.read())
                 # Read excel
                 basic_info = workbook.sheet_by_name('基本信息')
@@ -99,7 +101,7 @@ def result(request):
     title_name = dict_basicinfo['title']
     projects_fund = dict_basicinfo['funding']
 
-    com_ind = assess_score(list_searched, patents)
+    com_ind, jcr_score, total_if, total_cites = assess_score(list_searched, patents)
     sum_esi, sum_jcr12, sum_cites = 0, 0, 0
     for record in list_searched:
         if record['esi'] == '是':
@@ -136,10 +138,31 @@ def result(request):
         'four_youth': four_youth_title,
         'esi_num': sum_esi,
         'total_funding': projects_fund,
+        'jcr_score': jcr_score,
+        'if': total_if,
+        'ci': total_cites,
     }
     content = get_details(info)
 
-    return render(request, 'process_form/result.html', content)
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(BASE_DIR, 'process_form', 'excel_file', 'template.xlsx')
+    tg_dir = os.path.join(BASE_DIR, 'process_form', 'target_excel')
+    write_excel(path, tg_dir, info, content)
+
+    return render(request, 'process_form/result.html')
+
+
+def download(request):
+    print('download')
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(BASE_DIR, 'process_form', 'target_excel', 'result.xlsx')
+    file = open(path, 'rb')
+    response = FileResponse(file)
+    response['Content-Type'] = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    response['Content-Disposition'] = 'attachment;filename="定岗推荐.xlsx"'
+    # file.close()
+
+    return response
 
 
 def edit(request, forloop_counter):
@@ -259,3 +282,4 @@ def addinfo(request, forloop_counter):
         list_unsearched.pop(int(forloop_counter) - 1)
 
         return redirect("processform:paperinfo_html")
+
